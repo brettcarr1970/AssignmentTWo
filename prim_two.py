@@ -77,40 +77,44 @@ class PrimTWo:
         print(x.getId())
 
     def prim2(self, g, w, s, n):
-        vt = [0]
-        et = [0]
-        t = (et)
+        vt = []
+        et = []
+        t = (vt,et)
+        test_weight = []
         edges = [0] * n
         edge_weight = [0] * n
         visited = [False] * n
         for j in range(1, n):
             edge_weight[j] = w[s][j]
-            edges[j] = j
+            edges[j] = s
             visited[j] = False
-
         edge_weight[s] = 0
         visited[s] = True
         # print(visited)
-        i = 1
-        k = 0
-        # print(edge_weight)
-        while i < len(visited) - 1 and visited[i]:
-            # k = min(i for i in edge_weight if i > self.x)
-            for e in range(1, len(w)):
-                k = min(i for i in w[e] if i > 0)
-                print(k)
-                self.x = k
-                visited[i] = True
-                # print(edge_weight[i])
-                print("The Index: %s"  % edge_weight.index(edge_weight[i]))
-                et.append((k, edges[edge_weight.index(edge_weight[i])]))
+        i = 0
+        l = 1
+        # k = 1
+        test_weight = edge_weight
+        # m = min(filter(lambda x: x > 0, w[l]))
+        while len(test_weight) > 0:
+            if i > 0:
+                k,index = min((b,a) for a,b in enumerate(w[i]) if b>0)
+                print("%s %s" % (k,index))
+            k = min(test_weight)
+            rm = int(test_weight.index(k))
+            del test_weight[rm]
+            visited[i] = True
+            self.x = k
+            if k < len(w):
+                et.append((k, edges[k]))
                 vt.append(k)
-                i += 1
+            i += 1
+
+        j = 0
         for j in visited:
-            if not i:
-                if w[k][j] < edge_weight[j]:
-                    edge_weight[j] = w[k][j]
-                    edges[j] = k
+            if visited[j] == False and w[k][j] < edge_weight[j]:
+                edge_weight[j] = w[k][j]
+                edges[j] = k
         print(t)
 
         print(visited)
