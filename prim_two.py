@@ -92,21 +92,21 @@ class PrimTWo:
         visited[s] = True
         # print(visited)
         i = 0
-        l = 1
-        # k = 1
         test_weight = edge_weight
-        # m = min(filter(lambda x: x > 0, w[l]))
+
         while len(test_weight) > 0:
             if i > 0:
                 k,index = min((b,a) for a,b in enumerate(w[i]) if b>0)
-                print("%s %s" % (k,index))
+                # print("%s %s" % (k,index))
+                # self.ww = index
+                et.append((k, index))
             k = min(test_weight)
             rm = int(test_weight.index(k))
             del test_weight[rm]
             visited[i] = True
             self.x = k
-            if k < len(w):
-                et.append((k, edges[k]))
+            if k not in test_weight :
+                # et.append((k, edges[self.ww]))
                 vt.append(k)
             i += 1
 
