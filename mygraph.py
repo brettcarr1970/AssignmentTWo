@@ -126,11 +126,7 @@ for v in g:
 g = g.make_matrix(g)
 print(matrix)
 p = PrimTWo()
-<<<<<<< HEAD
-p.prim2(g, matrix, 1, 10)
-=======
 p.prim2(g, matrix, 1, 11)
->>>>>>> 1952c83... New changelist
 # print(my_list_gr)
 
 # gr = myg(g)
