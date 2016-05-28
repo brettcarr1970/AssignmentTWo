@@ -99,7 +99,7 @@ class PrimTWo:
                 k,index = min((b,a) for a,b in enumerate(w[i]) if b>0)
                 # print("%s %s" % (k,index))
                 # self.ww = index
-                et.append((k, index))
+                et.append((i, index))
             k = min(test_weight)
             rm = int(test_weight.index(k))
             del test_weight[rm]
@@ -118,34 +118,3 @@ class PrimTWo:
         print(t)
 
         print(visited)
-
-# g.addEdge(0, 1)
-# g.addEdge(0, 5)
-# g.addEdge(1, 2)
-# g.addEdge(2, 3)
-# g.addEdge(3, 4)
-# g.addEdge(3, 5)
-# g.addEdge(4, 0)
-# g.addEdge(5, 4)
-# g.addEdge(5, 2)
-# for v in g:
-#     for w in v.getConnections():
-#         print("(  %s  ,  %s  )" % (v.getId(), w.ge# tId()))
-
-# g = [1, 2, # 3, 4, 5]
-# matrix = [[0, 2, 3# , 4, 5],
-#           [1, 0, 3# , 4, 5],
-#           [1, 2, 0# , 4, 5],
-#           [1, 2, 3# , 0, 5],
-#           [1, 2, 3# ,#  4, 0]]
-#
-# p = PrimTWo()
-# p.bfs(p.g.getVertex(1))
-# p.traverse(p.g.getVertex(211))
-# s = ??1
-# n = 5
-# print(matrix)
-# # print(p.matrix)
-# p.prim2(p, matrix, s, n)
-# # cProfile.run('p.bfs(p.g.getVertex(60))')
-

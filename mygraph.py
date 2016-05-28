@@ -126,7 +126,7 @@ for v in g:
 g = g.make_matrix(g)
 print(matrix)
 p = PrimTWo()
-p.prim2(g, matrix, 1, 11)
+p.prim2(g, matrix, 1, 10)
 # print(my_list_gr)
 
 # gr = myg(g)
