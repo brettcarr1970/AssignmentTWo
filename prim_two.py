@@ -77,15 +77,22 @@ class PrimTWo:
         print(x.getId())
 
     def prim2(self, g, w, s, n):
+<<<<<<< HEAD
         vt = []
         et = []
         t = (vt,et)
         test_weight = []
+=======
+        vt = [0]
+        et = [0]
+        t = (et)
+>>>>>>> 1952c83... New changelist
         edges = [0] * n
         edge_weight = [0] * n
         visited = [False] * n
         for j in range(1, n):
             edge_weight[j] = w[s][j]
+<<<<<<< HEAD
             edges[j] = s
             visited[j] = False
         edge_weight[s] = 0
@@ -118,3 +125,65 @@ class PrimTWo:
         print(t)
 
         print(visited)
+=======
+            edges[j] = j
+            visited[j] = False
+
+        edge_weight[s] = 0
+        visited[s] = True
+        # print(visited)
+        i = 1
+        k = 0
+        # print(edge_weight)
+        while i < len(visited) - 1 and visited[i]:
+            # k = min(i for i in edge_weight if i > self.x)
+            for e in range(1, len(w)):
+                k = min(i for i in w[e] if i > 0)
+                print(k)
+                self.x = k
+                visited[i] = True
+                # print(edge_weight[i])
+                print("The Index: %s"  % edge_weight.index(edge_weight[i]))
+                et.append((k, edges[edge_weight.index(edge_weight[i])]))
+                vt.append(k)
+                i += 1
+        for j in visited:
+            if not i:
+                if w[k][j] < edge_weight[j]:
+                    edge_weight[j] = w[k][j]
+                    edges[j] = k
+        print(t)
+
+        print(visited)
+
+# g.addEdge(0, 1)
+# g.addEdge(0, 5)
+# g.addEdge(1, 2)
+# g.addEdge(2, 3)
+# g.addEdge(3, 4)
+# g.addEdge(3, 5)
+# g.addEdge(4, 0)
+# g.addEdge(5, 4)
+# g.addEdge(5, 2)
+# for v in g:
+#     for w in v.getConnections():
+#         print("(  %s  ,  %s  )" % (v.getId(), w.ge# tId()))
+
+# g = [1, 2, # 3, 4, 5]
+# matrix = [[0, 2, 3# , 4, 5],
+#           [1, 0, 3# , 4, 5],
+#           [1, 2, 0# , 4, 5],
+#           [1, 2, 3# , 0, 5],
+#           [1, 2, 3# ,#  4, 0]]
+#
+# p = PrimTWo()
+# p.bfs(p.g.getVertex(1))
+# p.traverse(p.g.getVertex(211))
+# s = ??1
+# n = 5
+# print(matrix)
+# # print(p.matrix)
+# p.prim2(p, matrix, s, n)
+# # cProfile.run('p.bfs(p.g.getVertex(60))')
+
+>>>>>>> 1952c83... New changelist
